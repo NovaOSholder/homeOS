@@ -45,9 +45,25 @@
       height: 48px;
       margin-bottom: 10px;
     }
+
+    /* Saat widgeti */
+    #clock {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 24px;
+      font-weight: bold;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 10px 15px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
   </style>
 </head>
 <body>
+  <!-- Saat Widgeti -->
+  <div id="clock"></div>
+
   <!-- Uygulama Simgeleri -->
   <div id="app-grid">
     <div class="app-icon" onclick="location.href='file-manager.php';">
@@ -64,5 +80,20 @@
       <span>Settings</span>
     </div>
   </div>
+
+  <script>
+    // Saat widgeti için JavaScript
+    function updateClock() {
+      const now = new Date();
+      const hours = String(now.getHours()).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const seconds = String(now.getSeconds()).padStart(2, '0');
+      document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+    }
+
+    // Saati her saniye güncelle
+    setInterval(updateClock, 1000);
+    updateClock(); // İlk yükleme sırasında saati hemen göster
+  </script>
 </body>
 </html>
