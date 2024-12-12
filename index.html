@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>homeOS: Chilling...</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: url('wallpaper.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    #app-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      margin: auto;
+      max-width: 80%;
+    }
+
+    .app-icon {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 10px;
+      cursor: pointer;
+      transition: transform 0.2s, background-color 0.2s;
+    }
+
+    .app-icon:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      transform: scale(1.1);
+    }
+
+    .app-icon img {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Uygulama Simgeleri -->
+  <div id="app-grid">
+    <div class="app-icon" onclick="location.href='file-manager.php';">
+      <img src="assets/icons/file-manager.png" alt="Dosya Yöneticisi">
+      <span>App store</span>
+    </div>
+    <div class="app-icon">
+      <img src="assets/icons/browser.png" alt="Tarayıcı">
+      <a href="https://bing.com/"></a>
+      <span>Browser</span>
+    </div>
+    <div class="app-icon">
+      <img src="assets/icons/settings.png" alt="Ayarlar">
+      <span>Settings</span>
+    </div>
+  </div>
+</body>
+</html>
